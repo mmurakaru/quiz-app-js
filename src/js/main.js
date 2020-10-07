@@ -10,6 +10,16 @@ const homeContent = document.querySelector('[data-js=homeContent]')
 const bookmarksContent = document.querySelector('[data-js=bookmarksContent]')
 const createContent = document.querySelector('[data-js=createContent]')
 const profileContent = document.querySelector('[data-js=profileContent]')
+const bookmarkActive = document.querySelector('[data-js=bookmarkActive]')
+const bookmark = document.querySelector('[data-js=bookmark]')
+
+bookmarkActive.addEventListener('click', () => {
+  bookmarkActive.classList.add('d-none')
+})
+
+bookmark.addEventListener('click', () => {
+  bookmarkActive.classList.remove('d-none')
+})
 
 homeBtn.addEventListener('click', () => {
   home.classList.remove('d-none')
