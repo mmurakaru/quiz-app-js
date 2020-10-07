@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/styles.css" />
     <title>Quiz-App | Home</title>
+    <script defer src="js/main.js"></script>
   </head>
   <body>
     <header class="header center">
-      <h1 class="header__title">Quiz-App</h1>
+      <h1 data-js="home" class="header__title">Quiz-App</h1>
+      <h1 data-js="bookmarks" class="d-none header__title">Bookmarks</h1>
+      <h1 data-js="create" class="d-none header__title">Create</h1>
+      <h1 data-js="profile" class="d-none header__title">Profile</h1>
     </header>
 
-    <main class="main-grid--1column">
+    <main data-js="homeContent" class="main-grid--1column">
       <section class="card">
         <h2 class="card__title">Question:</h2>
         <svg
@@ -122,9 +126,142 @@
       </section>
     </main>
 
-    <footer class="navigation">
-      <a class="navigation__link center" href="index.html">
+    <!--bookmarkscontent-->
+
+    <main data-js="bookmarksContent" class="d-none main-grid--1column">
+      <section class="card">
+        <h2 class="card__title">Question:</h2>
         <svg
+          class="card__bookmark-icon card__bookmark-icon--active"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"
+          />
+        </svg>
+        <p class="card__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Exercitationem non, architecto commodi quod id asper?
+        </p>
+        <button class="button">Show Answer</button>
+        <p class="card__text d-none">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Exercitationem non, architecto commodi quod id asper?
+        </p>
+        <ul class="tag-list">
+          <li class="tag-list__item">CSS</li>
+          <li class="tag-list__item">HTML</li>
+          <li class="tag-list__item">Position</li>
+          <li class="tag-list__item">BEM</li>
+        </ul>
+      </section>
+      <section class="card">
+        <h2 class="card__title">Question:</h2>
+        <svg
+          class="card__bookmark-icon card__bookmark-icon--active"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"
+          />
+        </svg>
+        <p class="card__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Exercitationem non, architecto commodi quod id asper?
+        </p>
+        <button class="button">Show Answer</button>
+        <p class="card__text d-none">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Exercitationem non, architecto commodi quod id asper?
+        </p>
+        <ul class="tag-list">
+          <li class="tag-list__item">CSS</li>
+          <li class="tag-list__item">HTML</li>
+          <li class="tag-list__item">Position</li>
+          <li class="tag-list__item">BEM</li>
+        </ul>
+      </section>
+    </main>
+
+    <!--create-->
+
+    <main data-js="createContent" class="d-none main-grid--1column">
+      <form class="form" action="">
+        <label for="textarea1"
+          >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos
+          placeat, reiciendis natus dolor!</label
+        >
+        <textarea
+          class="form__text-input"
+          name="textarea1"
+          id="textarea1"
+          cols="30"
+          rows="10"
+          required
+        ></textarea>
+
+        <label for="textarea2"
+          >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos
+          placeat, reiciendis natus dolor!</label
+        >
+        <textarea
+          class="form__text-input"
+          name="textarea2"
+          id="textarea2"
+          cols="30"
+          rows="10"
+          required
+        ></textarea>
+
+        <label for="tags-input"
+          >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos
+          placeat, reiciendis natus dolor!</label
+        >
+        <input
+          class="form__text-input"
+          type="text"
+          name="tags-input"
+          id="tags-input"
+          required
+        />
+
+        <input class="button" type="submit" value="Submit" />
+      </form>
+    </main>
+
+    <!--profile-->
+
+    <main data-js="profileContent" class="d-none main-grid--2columns">
+      <img
+        class="profile-picture"
+        src="images/profile-picture.png"
+        alt="Profile Picture"
+      />
+      <h3 class="center">Jana Bremer</h3>
+
+      <p class="grid-span">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
+        harum eaque autem. Vitae veniam quidem temporibus, quasi omnis, enim sit
+        perferendis eligendi deserunt cumque, accusamus placeat. Quidem iusto
+        possimus ad.
+      </p>
+
+      <h3 class="grid-span">Tags about myself</h3>
+      <ul class="tag-list grid-span">
+        <li class="tag-list__item">tag1</li>
+        <li class="tag-list__item">tag2</li>
+        <li class="tag-list__item">tag3</li>
+        <li class="tag-list__item">tag4</li>
+      </ul>
+      <button class="button grid-span">Logout</button>
+    </main>
+
+    <footer class="navigation">
+      <a class="navigation__link center">
+        <svg
+          data-js="homeBtn"
           class="navigation__icon navigation__icon--active"
           alt="home"
           ;
@@ -135,8 +272,9 @@
         </svg>
       </a>
 
-      <a class="navigation__link center" href="bookmarks.html">
+      <a class="navigation__link center">
         <svg
+          data-js="bookmarksBtn"
           class="navigation__icon"
           alt="bookmarks"
           xmlns="http://www.w3.org/2000/svg"
@@ -147,7 +285,7 @@
           />
         </svg>
       </a>
-      <a class="navigation__link center" href="create.html">
+      <a class="navigation__link center" data-js="createBtn">
         <svg
           class="navigation__icon"
           alt="create"
@@ -159,7 +297,7 @@
           />
         </svg>
       </a>
-      <a class="navigation__link center" href="profile.html">
+      <a class="navigation__link center" data-js="profileBtn">
         <svg
           class="navigation__icon"
           alt="profile"
