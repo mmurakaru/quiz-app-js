@@ -12,6 +12,12 @@ const createContent = document.querySelector('[data-js=createContent]')
 const profileContent = document.querySelector('[data-js=profileContent]')
 const bookmarkActive = document.querySelector('[data-js=bookmarkActive]')
 const bookmark = document.querySelector('[data-js=bookmark]')
+const showAnswerBtn = document.querySelector('[data-js=showAnswerBtn]')
+const showAnswer = document.querySelector('[data-js=showAnswer]')
+
+showAnswerBtn.addEventListener('click', () => {
+  showAnswer.classList.toggle('d-none')
+})
 
 bookmarkActive.addEventListener('click', () => {
   bookmarkActive.classList.add('d-none')
