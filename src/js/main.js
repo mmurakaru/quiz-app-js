@@ -15,6 +15,13 @@ const bookmark = document.querySelector('[data-js=bookmark]')
 const showAnswerBtn = document.querySelector('[data-js=showAnswerBtn]')
 const showAnswer = document.querySelector('[data-js=showAnswer]')
 
+const clearInput = document.querySelector('[data-js=clearInput]')
+const form = document.querySelector('[data-js=form]')
+
+clearInput.addEventListener('click', () => {
+  form.reset()
+})
+
 showAnswerBtn.addEventListener('click', () => {
   showAnswer.classList.toggle('d-none')
 })
